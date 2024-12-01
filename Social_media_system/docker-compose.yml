@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app1:
+    build:
+      context: ./app1
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+  app2:
+    build:
+      context: ./app2
+    ports:
+      - "8001:8001"
+    depends_on:
+      - app1
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
