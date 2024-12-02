@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # The User Profile Service URL (you'll need to replace this with the correct IP or DNS if deploying in separate clusters)
-USER_PROFILE_SERVICE_URL = "http://app1:8000/users"  # Use app1 as the hostname when using Docker Compose
+USER_PROFILE_SERVICE_URL = "http://localhost:8000/users"  # Use localhost as the hostname when using Docker Compose
 
 @app.route('/user/<int:user_id>', methods=['GET'])
 def get_user_details(user_id):
